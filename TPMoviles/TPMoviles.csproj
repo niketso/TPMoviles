@@ -314,6 +314,7 @@
   <ItemGroup>
     <Compile Include="Assets\CameraLook.cs" />
     <Compile Include="Assets\PlayerShoot.cs" />
+    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />
