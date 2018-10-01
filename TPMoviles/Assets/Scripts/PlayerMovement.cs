@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour {
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
