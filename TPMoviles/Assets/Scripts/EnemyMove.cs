@@ -33,6 +33,7 @@ public class EnemyMove : MonoBehaviour
 
     private void Awake()
     {
+        EnemyManager.Instance.Assign(gameObject);
         isDead = false;
         target = GameObject.FindGameObjectWithTag("Player").transform;
         AnimatorEnemy = GetComponent<Animator>();
@@ -55,12 +56,15 @@ public class EnemyMove : MonoBehaviour
         }
         else { agent.SetDestination(transform.position); }
     }
-
+    private void OnDestroy()
+    {
+        EnemyManager.Instance.ClearList(gameObject);
+    }
     void Update()
     {        
         dist = (Vector3.Distance(transform.position, target.position));
         AnimatorEnemy.SetFloat("DistanceToPlayer", dist);
-        Debug.Log(dist);
+        //Debug.Log(dist);
         if (dist >= minDist)
         {
             Move();
@@ -79,4 +83,5 @@ public class EnemyMove : MonoBehaviour
             this.coll.enabled = false;
         }
     }
+    
 }

@@ -41,6 +41,7 @@ public class RayViewer : MonoBehaviour {
                 hit.transform.gameObject.GetComponent<Animator>().SetInteger("Speed", 0);
                 hit.transform.gameObject.GetComponent<EnemyMove>().IsDead = true;
                 Destroy(hit.collider.gameObject,6);
+
                 score++;
                 puntos.text = score.ToString();
                 if (score == 10)

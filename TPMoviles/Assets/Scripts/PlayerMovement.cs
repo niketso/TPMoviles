@@ -15,10 +15,16 @@ public class PlayerMovement : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        agent.SetDestination(waypointsArray[0].transform.position);
     }
 
     private void Update()
     {
-        agent.SetDestination(waypointsArray[0].transform.position);
+        
+    }
+
+    public void Walk()
+    {
+        agent.SetDestination(waypointsArray[1].transform.position);
     }
 }
