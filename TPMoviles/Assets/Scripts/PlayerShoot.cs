@@ -12,7 +12,7 @@ public class PlayerShoot : MonoBehaviour
 
     private Camera cam;
     private WaitForSeconds shotDuration = new WaitForSeconds(.07f);
-    private AudioSource gunAudio;
+   // private AudioSource gunAudio;
     private LineRenderer laserLine;
     private float nextFire;
 
@@ -20,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
     void Start()
     {
         laserLine = GetComponentInChildren<LineRenderer>();
-        gunAudio = GetComponent<AudioSource>();
+        //gunAudio = GetComponent<AudioSource>();
         cam = GetComponentInChildren<Camera>();
     }
 
