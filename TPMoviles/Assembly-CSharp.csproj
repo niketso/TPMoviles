@@ -68,8 +68,8 @@
     <Compile Include="Assets\Scripts\Enemy\GroupOfEnemiesActivator.cs" />
     <Compile Include="Assets\Scripts\Enemy\GroupOfEnemiesManager.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
-    <Compile Include="Assets\Scripts\PlayerShoot.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\RayViewer.cs" />
     <Compile Include="Assets\Scripts\UpdateScore.cs" />
     <Compile Include="Assets\Scripts\WavesBehaviour.cs" />

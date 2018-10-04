@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class PlayerMovement : MonoBehaviour {
 
 
-    [SerializeField]
-    GameObject[] waypointsArray;    
+    [SerializeField] GameObject[] waypointsArray;
+    private int CurrentWaypoint = 0;
     NavMeshAgent agent;
 
     private void Awake()
@@ -15,16 +15,15 @@ public class PlayerMovement : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        agent.SetDestination(waypointsArray[0].transform.position);
+        agent.SetDestination(waypointsArray[CurrentWaypoint].transform.position);
     }
-
-    private void Update()
-    {
-        
-    }
-
+    
     public void Walk()
     {
-        agent.SetDestination(waypointsArray[1].transform.position);
+        agent.SetDestination(waypointsArray[CurrentWaypoint].transform.position);
+    }
+    public void SetNextWaypoint()
+    {       
+        CurrentWaypoint++;
     }
 }
