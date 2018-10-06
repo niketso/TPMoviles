@@ -43,6 +43,7 @@ public class EnemyMovement : MonoBehaviour
     void Atack()
     {
         AnimatorEnemy.SetTrigger("Atack");
+        AnimatorEnemy.SetBool("Atacking", true);
         //AnimatorEnemy.SetInteger("WichAtack", Random.Range(1, 4));
     }
 
@@ -50,10 +51,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!isDead)
         {
+            AnimatorEnemy.SetBool("Atacking", false);
             agent.SetDestination(target.position);
             AnimatorEnemy.SetFloat("Speed", 0.1f);
         }
-        else { agent.SetDestination(transform.position); }
+        else { agent.SetDestination(transform.position); AnimatorEnemy.SetBool("Atacking", false); }
     }
     
     void Update()

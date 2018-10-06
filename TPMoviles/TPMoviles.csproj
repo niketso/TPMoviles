@@ -312,9 +312,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraLook.cs" />
-    <Compile Include="Assets\PlayerShoot.cs" />
-    <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\CameraLook.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Enemy\GroupOfEnemies.cs" />
+    <Compile Include="Assets\Scripts\Enemy\GroupOfEnemiesActivator.cs" />
+    <Compile Include="Assets\Scripts\Enemy\GroupOfEnemiesManager.cs" />
+    <Compile Include="Assets\Scripts\HandHit.cs" />
+    <Compile Include="Assets\Scripts\Menu.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
+    <Compile Include="Assets\Scripts\RayViewer.cs" />
+    <Compile Include="Assets\Scripts\UpdateScore.cs" />
+    <Compile Include="Assets\Scripts\WavesBehaviour.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

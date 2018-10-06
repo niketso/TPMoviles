@@ -9,6 +9,7 @@ public class Menu : MonoBehaviour
     public void ChangeLevel()
     {
         SceneManager.LoadScene("Prototipo");
+        
     }
 
     public void StartScreen()
