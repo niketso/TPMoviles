@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 public class RayViewer : MonoBehaviour {
     public LayerMask layers;
@@ -16,11 +17,13 @@ public class RayViewer : MonoBehaviour {
     public int score;
     public Text puntos;
     [SerializeField] string nextLevel;
+    
 
     void Start ()
     {
         cam = GetComponent<Camera>();
         gunAudio = GetComponent<AudioSource>();
+        
     }	
 	
 	void Update ()
@@ -46,7 +49,9 @@ public class RayViewer : MonoBehaviour {
                     hit.transform.gameObject.GetComponent<EnemyMovement>().IsDead = true;
                     hit.transform.gameObject.GetComponent<Enemy>().IsDead();
                     hit.transform.gameObject.GetComponent<Collider>().enabled = false;
+                    hit.transform.gameObject.GetComponent<NavMeshAgent>().enabled = false;
                     Destroy(hit.collider.gameObject,6);
+                    
                     GameObject.FindGameObjectWithTag("Hand").GetComponent<Collider>().enabled = false;
                     score++;
                     puntos.text = score.ToString();

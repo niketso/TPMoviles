@@ -55,7 +55,11 @@ public class EnemyMovement : MonoBehaviour
             agent.SetDestination(target.position);
             AnimatorEnemy.SetFloat("Speed", 0.1f);
         }
-        else { agent.SetDestination(transform.position); AnimatorEnemy.SetBool("Atacking", false); }
+        else
+        {
+            agent.SetDestination(transform.position);
+            AnimatorEnemy.SetBool("Atacking", false);
+        }
     }
     
     void Update()
@@ -63,7 +67,7 @@ public class EnemyMovement : MonoBehaviour
         dist = (Vector3.Distance(transform.position, target.position));
         AnimatorEnemy.SetFloat("DistanceToPlayer", dist);
         //Debug.Log(dist);
-        if (dist >= minDist)
+        if (!isDead && dist >= minDist)
         {
             Move();
         }

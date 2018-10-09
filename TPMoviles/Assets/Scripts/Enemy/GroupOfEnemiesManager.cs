@@ -8,6 +8,7 @@ public class GroupOfEnemiesManager : MonoBehaviour
     
 
     private static GroupOfEnemiesManager instance;
+
     public static GroupOfEnemiesManager Instance
     {
         get
@@ -20,11 +21,13 @@ public class GroupOfEnemiesManager : MonoBehaviour
             }
             return instance;
         }
-    }    
+    }
+    
     private void Awake()
     {
         groupOfEnemies = new Queue<GroupOfEnemies>();       
     }
+
     public void Assign(GameObject[] gameobj)
     {        
         foreach (GameObject go in gameobj)
@@ -34,12 +37,11 @@ public class GroupOfEnemiesManager : MonoBehaviour
         }
 
         Debug.Log("Asignado");
-    }    
+    }
+    
     public void ActivateGroup()
     {
         groupOfEnemies.Dequeue().enabled = true;
         Debug.Log("Activado");
     }
-
-
 }
