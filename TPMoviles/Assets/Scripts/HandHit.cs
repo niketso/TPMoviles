@@ -16,14 +16,26 @@ public class HandHit : MonoBehaviour {
 	void Update () {		
 	}
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Player")
             Debug.Log("MANO CON PLAYER");
             SceneManager.LoadScene("GameOver");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }*/
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Player")
+            Debug.Log("MANO CON PLAYER");
+        SceneManager.LoadScene("GameOver");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
-    }
+
+
+
+}
     
 
