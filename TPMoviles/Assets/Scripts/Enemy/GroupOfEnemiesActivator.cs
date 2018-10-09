@@ -6,8 +6,7 @@ public class GroupOfEnemiesActivator : MonoBehaviour {
     
     private void OnTriggerEnter(Collider other)
     {
-        GroupOfEnemiesManager.Instance.ActivateGroup();
-        
+        GroupOfEnemiesManager.Instance.ActivateGroup();     
         
         
     }

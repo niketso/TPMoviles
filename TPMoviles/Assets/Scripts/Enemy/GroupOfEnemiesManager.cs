@@ -41,7 +41,14 @@ public class GroupOfEnemiesManager : MonoBehaviour
     
     public void ActivateGroup()
     {
-        groupOfEnemies.Dequeue().enabled = true;
+        if (groupOfEnemies.Count == 0)
+        {
+            Debug.Log(groupOfEnemies.Count);
+            return;
+        }
+        GroupOfEnemies goe = groupOfEnemies.Dequeue();
+        Debug.Log(goe);
+        goe.enabled = true;
         Debug.Log("Activado");
     }
 }
