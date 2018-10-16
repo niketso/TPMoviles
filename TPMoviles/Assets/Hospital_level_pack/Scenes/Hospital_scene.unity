@@ -18517,6 +18517,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114075516053688312, guid: fd8524e155f008a4882119356270357b,
+        type: 2}
+      propertyPath: waypointsArray.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4446264922100874, guid: fd8524e155f008a4882119356270357b, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.51
@@ -18573,7 +18578,8 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114258222888172224, guid: fd8524e155f008a4882119356270357b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: fd8524e155f008a4882119356270357b, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1130881369

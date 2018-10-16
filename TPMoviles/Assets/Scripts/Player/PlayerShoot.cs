@@ -24,10 +24,14 @@ public class PlayerShoot : MonoBehaviour
     public int score;
     public Text puntos;
 
-    void Start()
+    private void Awake()
     {
         cam = GetComponent<Camera>();
         gunAudio = GetComponent<AudioSource>();
+    }
+            
+    void Start()
+    {
         currentBullets = bulletsPerMag;
     }
 
@@ -36,7 +40,7 @@ public class PlayerShoot : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            Debug.Log("disparito");
+            
             if (currentBullets > 0)
                 Fire();
             //else
