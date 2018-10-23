@@ -320,6 +320,7 @@
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\RayViewer.cs" />
+    <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\UpdateScore.cs" />
     <Compile Include="Assets\Scripts\WavesBehaviour.cs" />
   </ItemGroup>

@@ -11,28 +11,28 @@ public class PlayerShoot : MonoBehaviour
     public LayerMask layers;
     bool HitsEnemy;
     private Camera cam;
-    private AudioSource gunAudio;
-    public float weaponRange = 50f;
-    // public float fireRate = 0.25f;
+    //private AudioSource gunAudio;
+    public float weaponRange = 50f;    
     [SerializeField] private int bulletsPerMag = 7;
     [SerializeField] private int totalBullets = 90;
     public int currentBullets;
-    //private float nextFire;
     public float fireRate = 0.1f;
     float fireTimer;
-    // private bool isReloading = false;
+    
     public int score;
-    public Text puntos;
+    public Text points;
+    public Text ammoText;
 
     private void Awake()
     {
         cam = GetComponent<Camera>();
-        gunAudio = GetComponent<AudioSource>();
+        //gunAudio = GetComponent<AudioSource>();
     }
             
     void Start()
     {
         currentBullets = bulletsPerMag;
+        UpdateAmmoText();
     }
 
     void Update()
@@ -43,8 +43,7 @@ public class PlayerShoot : MonoBehaviour
             
             if (currentBullets > 0)
                 Fire();
-            //else
-            //Reload();
+            
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -87,7 +86,7 @@ public class PlayerShoot : MonoBehaviour
                 Destroy(hit.collider.gameObject, 6);
                 GameObject.FindGameObjectWithTag("Hand").GetComponent<Collider>().enabled = false;
                 score++;
-                puntos.text = score.ToString();
+                points.text = score.ToString();
                 if (score == 25)
                 {
                     SceneManager.LoadScene("StartScreen");
@@ -99,6 +98,7 @@ public class PlayerShoot : MonoBehaviour
             }
 
             currentBullets--;
+            UpdateAmmoText();
             fireTimer = 0.0f;
         }
     }
@@ -115,6 +115,12 @@ public class PlayerShoot : MonoBehaviour
 
         totalBullets -= bulletsToUse;
         currentBullets += bulletsToUse;
+        UpdateAmmoText();
 
+    }
+
+    private void UpdateAmmoText()
+    {
+        ammoText.text = currentBullets + " / " + totalBullets;
     }
 }
