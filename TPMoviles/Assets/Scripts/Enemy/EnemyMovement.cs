@@ -49,7 +49,7 @@ public class EnemyMovement : MonoBehaviour
         //Debug.Log(dist);
         
 
-        if (!isDead && dist > minDist)
+        if (!isDead && dist >= minDist)
         {
             Move();
         }
