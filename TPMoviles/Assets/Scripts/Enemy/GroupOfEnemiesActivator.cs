@@ -7,9 +7,13 @@ public class GroupOfEnemiesActivator : MonoBehaviour {
     CameraLook cam;
     private void OnTriggerEnter(Collider other)
     {
-        GroupOfEnemiesManager.Instance.ActivateGroup();
-        cam = other.GetComponent<CameraLook>();
-        cam.enabled = true;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            GroupOfEnemiesManager.Instance.ActivateGroup();
+            cam = other.GetComponent<CameraLook>();
+            cam.enabled = true;
+        }
+        
         
         
     }

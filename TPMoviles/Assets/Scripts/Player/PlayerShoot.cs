@@ -72,8 +72,6 @@ public class PlayerShoot : MonoBehaviour
 
         if (Hit)
         {
-            Debug.Log(hit.collider.name);
-
             if (hit.collider.gameObject.tag == "Enemy" && !(hit.collider.gameObject.GetComponent<EnemyMovement>().IsDead))
             {
                 Debug.Log("Enemy HIT");

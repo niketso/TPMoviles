@@ -17,6 +17,9 @@ public class EnemyMovement : MonoBehaviour
     bool isDead;
     bool isAtacking;
     Collider coll;
+    [SerializeField] private bool runner = false;
+    LayerMask layerEnemy = 10;
+    public bool isStopped = false;
 
     public bool IsAtacking
     {
@@ -28,7 +31,6 @@ public class EnemyMovement : MonoBehaviour
     {
         get { return isDead; }
         set { isDead = value; }
-
     }
 
     private void Awake()
@@ -38,41 +40,21 @@ public class EnemyMovement : MonoBehaviour
         AnimatorEnemy = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         coll = GetComponent<Collider>();
-    }
-
-    void Atack()
-    {
-        AnimatorEnemy.SetTrigger("Atack");
-        AnimatorEnemy.SetBool("Atacking", true);
-        //AnimatorEnemy.SetInteger("WichAtack", Random.Range(1, 4));
-    }
-
-    void Move()
-    {
-        if (!isDead)
-        {
-            AnimatorEnemy.SetBool("Atacking", false);
-            agent.SetDestination(target.position);
-            AnimatorEnemy.SetFloat("Speed", 0.1f);
-        }
-        else
-        {
-            agent.SetDestination(transform.position);
-            AnimatorEnemy.SetBool("Atacking", false);
-        }
-    }
+    }    
     
     void Update()
     {        
         dist = (Vector3.Distance(transform.position, target.position));
         AnimatorEnemy.SetFloat("DistanceToPlayer", dist);
         //Debug.Log(dist);
-        if (!isDead && dist >= minDist)
+        
+
+        if (!isDead && dist > minDist)
         {
             Move();
         }
         else AnimatorEnemy.SetFloat("Speed", 0);
-
+        
         if (dist <= minDist)
         {
             Atack();
@@ -86,5 +68,44 @@ public class EnemyMovement : MonoBehaviour
         }
     }
     
-    
+    void Atack()
+    {
+        if (!isDead)
+        {
+            AnimatorEnemy.SetTrigger("Atack");
+            AnimatorEnemy.SetBool("Atacking", true);
+            agent.SetDestination(transform.position);
+            //AnimatorEnemy.SetInteger("WichAtack", Random.Range(1, 4));
+        }
+    }
+
+    void Move()
+    {
+        if (!isDead && !isStopped)
+        {            
+            if (runner == true)
+            {
+                AnimatorEnemy.SetBool("Runner", true);
+            }
+            AnimatorEnemy.SetBool("Atacking", false);
+            agent.SetDestination(target.position);
+            AnimatorEnemy.SetFloat("Speed", 0.1f);
+        }
+        else
+        {
+            agent.SetDestination(transform.position);
+            AnimatorEnemy.SetBool("Atacking", false);
+        }
+    }
+
+    /*void CheckSphere()
+    {
+        if (Physics.CheckSphere(new Vector3(this.transform.position.x + 0.15f, this.transform.position.y+1.05f, this.transform.position.z), 0.35f, layerEnemy))
+        {
+            Debug.Log("Choque contra otro enemy");
+            AnimatorEnemy.SetFloat("Speed", 0);
+            
+            //agent.SetDestination(this.transform.position); 
+        }        
+    }*/
 }

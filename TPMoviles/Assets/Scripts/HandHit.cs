@@ -25,14 +25,14 @@ public class HandHit : MonoBehaviour {
         Cursor.visible = true;
     }*/
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == "Player")
             Debug.Log("MANO CON PLAYER");
         SceneManager.LoadScene("GameOver");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-    }
+    }*/
 
 
 
