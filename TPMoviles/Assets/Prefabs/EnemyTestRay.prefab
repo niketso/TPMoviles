@@ -493,6 +493,7 @@ GameObject:
   - component: {fileID: 114624957642307752}
   - component: {fileID: 114140618156192574}
   - component: {fileID: 54483080830844920}
+  - component: {fileID: 114086288754077658}
   m_Layer: 10
   m_Name: EnemyTestRay
   m_TagString: Enemy
@@ -1499,15 +1500,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439583617592264}
-  m_LocalRotation: {x: -0, y: -0.83305275, z: -0, w: 0.55319357}
-  m_LocalPosition: {x: -6.43, y: 0.22, z: 4.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.7018542, z: -0, w: -0.7123206}
+  m_LocalPosition: {x: 6.33, y: 0.21999997, z: -4.51}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
   m_Children:
   - {fileID: 4693474647189720}
   - {fileID: 4237092622790572}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -109.975006, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -270.848, z: 0}
 --- !u!4 &4545460478505796
 Transform:
   m_ObjectHideFlags: 1
@@ -2021,6 +2022,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114086288754077658
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1439583617592264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d5d2caf3918c644929bb1de16b5bf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114140618156192574
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2032,7 +2044,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1615c0100a80628409133c2f87acf27d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDist: 2
+  minDist: 2.1
   target: {fileID: 0}
   myTransform: {fileID: 0}
   runner: 0
@@ -2078,9 +2090,9 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1439583617592264}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.31403476
+  m_Radius: 0.5
   m_Height: 2.173513
   m_Direction: 1
   m_Center: {x: 3.014304e-12, y: 0.95271873, z: 0.008987099}
