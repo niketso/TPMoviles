@@ -325,6 +325,7 @@
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\UpdateScore.cs" />
     <Compile Include="Assets\Scripts\WavesBehaviour.cs" />
+    <Compile Include="Assets\TriggerActivator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Packages\com.unity.package-manager-ui\Editor\Resources\Styles\Main_Dark.uss" />

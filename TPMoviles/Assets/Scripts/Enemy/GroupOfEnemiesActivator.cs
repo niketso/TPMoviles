@@ -11,7 +11,7 @@ public class GroupOfEnemiesActivator : MonoBehaviour {
         {
             GroupOfEnemiesManager.Instance.ActivateGroup();
             cam = other.GetComponent<CameraLook>();
-            cam.enabled = true;
+            //cam.enabled = true;
         }
         
         

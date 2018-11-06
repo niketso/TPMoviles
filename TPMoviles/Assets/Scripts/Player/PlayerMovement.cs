@@ -27,14 +27,13 @@ public class PlayerMovement : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         agent.SetDestination(waypointsArray[CurrentWaypoint].transform.position);
-        cam.enabled = false;
-        if (agent.speed == 0)
-        {
-            agent.transform.rotation = waypointsArray[CurrentWaypoint].transform.rotation;
-        }
+        //cam.enabled = false;
+        
+            
+        
     }
     public void SetNextWaypoint()
     {       
-        CurrentWaypoint++;
+        CurrentWaypoint++;        
     }
 }
