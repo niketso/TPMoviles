@@ -8,7 +8,7 @@ public class RayCreator : MonoBehaviour
 
     Animator animatorEnemy;
     EnemyMovement enemy;
-    LayerMask layermaskEnemy = ~10;
+    LayerMask layermaskEnemy = 1<<10;
     Vector3 rayPos;
 
     void Start()
@@ -47,7 +47,7 @@ public class RayCreator : MonoBehaviour
             var direction = Quaternion.AngleAxis(angles[i], transform.up) * transform.forward;
             RaycastHit hit;
             var result = Physics.Raycast(rayPos, direction, out hit, newRayLength, layermaskEnemy);
-            if (result)
+            if (result && hit.collider != this.GetComponent<Collider>()/*hit.transform.name!=this.name*/)
                 hits.Add(hit);
         }
       

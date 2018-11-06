@@ -32,7 +32,7 @@ public class GroupOfEnemiesManager : MonoBehaviour
     {        
         foreach (GameObject go in gameobj)
         {
-            go.GetComponent<GroupOfEnemies>().enabled = false;
+            go.GetComponent<GroupOfEnemies>().enabled = false;           
             groupOfEnemies.Enqueue(go.GetComponent<GroupOfEnemies>());
         }
 

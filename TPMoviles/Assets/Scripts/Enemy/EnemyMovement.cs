@@ -18,7 +18,6 @@ public class EnemyMovement : MonoBehaviour
     bool isAtacking;
     Collider coll;
     [SerializeField] private bool runner = false;
-    LayerMask layerEnemy = 10;
     public bool isStopped = false;
 
     public bool IsAtacking

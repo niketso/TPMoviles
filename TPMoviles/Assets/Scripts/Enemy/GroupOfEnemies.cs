@@ -35,7 +35,7 @@ public class GroupOfEnemies : MonoBehaviour {
     {
         foreach (GameObject go in enemies)
         {
-            go.SetActive(true);
+            go.SetActive(true);            
         }
     }
 }
