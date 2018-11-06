@@ -5,34 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class HandHit : MonoBehaviour {
 
-    GameObject enemy;
+    GameObject player;
 
-        // Use this for initialization
-    void Start () {
-       
-	}
-	
-	// Update is called once per frame
-	void Update () {		
-	}
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == "Player")
-            Debug.Log("MANO CON PLAYER");
-            SceneManager.LoadScene("GameOver");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }*/
+            player.GetComponent<PlayerLife>().lives--;
+         
+    }
 
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.transform.tag == "Player")
-            Debug.Log("MANO CON PLAYER");
-        SceneManager.LoadScene("GameOver");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }*/
+  
 
 
 
