@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.AI;
+using System;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -18,10 +19,13 @@ public class PlayerShoot : MonoBehaviour
     public int currentBullets;
     public float fireRate = 0.1f;
     float fireTimer;
+    public bool infiniteAmmoActivated = false;
     
     public int score;
     public Text points;
     public Text ammoText;
+
+    [SerializeField] GameObject canvasUI;
 
     private void Awake()
     {
@@ -38,7 +42,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             
             if (currentBullets > 0)
@@ -55,6 +59,15 @@ public class PlayerShoot : MonoBehaviour
         if (fireTimer < fireRate)
             fireTimer += Time.deltaTime;
 
+        if (infiniteAmmoActivated)
+        {
+            canvasUI.SetActive(false);
+        }
+        else
+        {
+            canvasUI.SetActive(true);
+        }
+
     }
 
     private void Fire()
@@ -62,7 +75,7 @@ public class PlayerShoot : MonoBehaviour
 
         if (fireTimer < fireRate || currentBullets <= 0 /*|| isReloading*/)
         {
-            Debug.Log("Fire1");
+            //Debug.Log("Fire1");
             return;
         }
 
@@ -95,11 +108,21 @@ public class PlayerShoot : MonoBehaviour
 
             }
 
-            currentBullets--;
-            UpdateAmmoText();
-            fireTimer = 0.0f;
+            if (!infiniteAmmoActivated)
+          
+            {
+                canvasUI.SetActive(true);
+                currentBullets--;
+                UpdateAmmoText();
+                fireTimer = 0.0f;
+            }
+
+            
         }
     }
+
+    
+
     public void Reload()
     {
         if (totalBullets <= 0)

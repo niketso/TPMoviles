@@ -8,7 +8,7 @@ public class RayCreator : MonoBehaviour
 
     Animator animatorEnemy;
     EnemyMovement enemy;
-    LayerMask layermaskEnemy = 1<<10;
+    LayerMask layermaskEnemy = 1 << 10;
     Vector3 rayPos;
 
     void Start()
@@ -60,7 +60,7 @@ public class RayCreator : MonoBehaviour
                 hitDetails = item.collider.name + " " + item.distance + " ";
             }
            
-            Debug.Log("ENEMY COLLISION - " + this.gameObject.name + " " + hitDetails);            
+            //Debug.Log("ENEMY COLLISION - " + this.gameObject.name + " " + hitDetails);            
             animatorEnemy.SetFloat("Speed", 0);
             enemy.isStopped = true;
         }

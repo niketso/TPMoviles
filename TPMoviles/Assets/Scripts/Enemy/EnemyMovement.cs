@@ -45,7 +45,7 @@ public class EnemyMovement : MonoBehaviour
     {        
         dist = (Vector3.Distance(transform.position, target.position));
         AnimatorEnemy.SetFloat("DistanceToPlayer", dist);
-        Debug.Log(this.gameObject.name + " - DISTANCEtoplayer - " + dist);        
+       // Debug.Log(this.gameObject.name + " - DISTANCEtoplayer - " + dist);        
 
         if (!isDead && dist >= minDist)
         {
