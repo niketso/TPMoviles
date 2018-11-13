@@ -42,7 +42,7 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetButtonDown("Fire1"))
+        if (InputManager.Instance.GetFireButton())
         {
             
             if (currentBullets > 0)
@@ -50,7 +50,7 @@ public class PlayerShoot : MonoBehaviour
             
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (InputManager.Instance.GetReloadButton())
         {
             if (currentBullets < bulletsPerMag && totalBullets > 0)
                 Reload();

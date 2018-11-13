@@ -31,7 +31,7 @@ public class PowerUpManager : MonoBehaviour {
 
     private void InfiniteBullets()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (InputManager.Instance.GetPowerUpButton())
         {
             powerUPDurationTimer.Start();                               
         }
@@ -56,9 +56,9 @@ public class PowerUpManager : MonoBehaviour {
 
     private void MachineGun()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             powerUpUI.SetActive(true);
-        }
+        }*/
     }
 }

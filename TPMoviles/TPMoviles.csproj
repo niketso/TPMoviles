@@ -319,6 +319,10 @@
     <Compile Include="Assets\Scripts\Enemy\GroupOfEnemiesManager.cs" />
     <Compile Include="Assets\Scripts\Enemy\SphereColl.cs" />
     <Compile Include="Assets\Scripts\HandHit.cs" />
+    <Compile Include="Assets\Scripts\IInput.cs" />
+    <Compile Include="Assets\Scripts\InputManager.cs" />
+    <Compile Include="Assets\Scripts\InputMobile.cs" />
+    <Compile Include="Assets\Scripts\InputPC.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerShoot.cs" />
