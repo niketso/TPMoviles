@@ -2049,6 +2049,7 @@ MonoBehaviour:
   myTransform: {fileID: 0}
   runner: 0
   isStopped: 0
+  hand: {fileID: 1192528494235686}
 --- !u!114 &114183907241615064
 MonoBehaviour:
   m_ObjectHideFlags: 1

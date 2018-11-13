@@ -17,7 +17,19 @@ public class TriggerActivator : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            enemyToActivate.SetActive(false);
+            if (enemyToActivate.activeSelf == true)
+            {
+                Debug.Log("DESACTIVAR WINDOW");
+                Time.timeScale = 1;
+                enemyToActivate.SetActive(false);
+            }
+            else
+            {
+                Debug.Log("ACTIVAR WINDOW");
+                Time.timeScale = 0.5f;
+                enemyToActivate.SetActive(true);
+                enemyAnim.SetTrigger("Attack");
+            }
         }
     }
 }

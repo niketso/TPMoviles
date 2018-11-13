@@ -32,12 +32,12 @@ public class RayCreator : MonoBehaviour
     float rayLength = 1f;
     int[] angles = new int[] { -20, -10, 0, 10, 20 };
     List<RaycastHit> hits = new List<RaycastHit>();
-    //  List<bool> results = new List<bool>();
+    //List<bool> results = new List<bool>();
 
     void Update()
     {
         hits.Clear();
-        // results.Clear();
+        //results.Clear();
         rayPos = new Vector3(transform.position.x + 0.4f, transform.position.y, transform.position.z);
         for (int i = 0; i < angles.Length; i++)
         {
@@ -58,11 +58,15 @@ public class RayCreator : MonoBehaviour
             {
                 Debug.DrawLine(rayPos, item.point, Color.red);
                 hitDetails = item.collider.name + " " + item.distance + " ";
+                if (item.transform.GetComponent<EnemyMovement>().IsDead == false)
+                {
+                    animatorEnemy.SetFloat("Speed", 0);
+                    enemy.isStopped = true;
+                }
             }
            
             //Debug.Log("ENEMY COLLISION - " + this.gameObject.name + " " + hitDetails);            
-            animatorEnemy.SetFloat("Speed", 0);
-            enemy.isStopped = true;
+
         }
         else
         {

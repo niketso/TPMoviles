@@ -19,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     Collider coll;
     [SerializeField] private bool runner = false;
     public bool isStopped = false;
+    [SerializeField] private GameObject hand;
 
     public bool IsAtacking
     {
@@ -63,6 +64,7 @@ public class EnemyMovement : MonoBehaviour
         if (AnimatorEnemy.GetBool("Dead"))
         {
             this.coll.enabled = false;
+            hand.GetComponent<Collider>().enabled = false; // DESACTIVO COLL DE LA MANO cuando muere
         }
     }
     

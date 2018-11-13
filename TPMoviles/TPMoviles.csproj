@@ -327,6 +327,7 @@
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Compile Include="Assets\Scripts\UpdateScore.cs" />
     <Compile Include="Assets\Scripts\WavesBehaviour.cs" />
+    <Compile Include="Assets\Timer.cs" />
     <Compile Include="Assets\TriggerActivator.cs" />
   </ItemGroup>
   <ItemGroup>
