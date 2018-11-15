@@ -6,13 +6,13 @@ public class InputPC : IInput
 {
     public float GetHorizontalCameraAxis()
     {
-         return Input.GetAxis("Horizontal");
+         return Input.GetAxis("Mouse X");
     }
 
 
     public float GetVerticalCameraAxis()
     {
-        return Input.GetAxis("Vertical");
+        return Input.GetAxis("Mouse Y");
     }
 
 

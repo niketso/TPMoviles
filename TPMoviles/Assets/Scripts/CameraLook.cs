@@ -14,9 +14,9 @@ public class CameraLook : MonoBehaviour
     {
         //Calculo la rotación en cada eje según el input
         float horRot = InputManager.Instance.GetHorizontalCameraAxis() * speed * Time.deltaTime;
-        Debug.Log(InputManager.Instance.GetHorizontalCameraAxis());
+       // Debug.Log(InputManager.Instance.GetHorizontalCameraAxis());
         float verRot = -InputManager.Instance.GetVerticalCameraAxis() * speed * Time.deltaTime;
-        Debug.Log(InputManager.Instance.GetVerticalCameraAxis());
+        //Debug.Log(InputManager.Instance.GetVerticalCameraAxis());
 
         //Aplico la rotación a un contador de angulo vertical
         verticalAngle += verRot;

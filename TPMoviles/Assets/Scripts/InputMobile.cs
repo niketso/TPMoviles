@@ -2,18 +2,18 @@
 
 public class InputMobile : IInput
 {
-
+        [SerializeField] VirtualJoystick vJoystick;
     public float GetHorizontalCameraAxis()
     {
-        //Crear d pad en UI.
-        return Input.GetAxis("Horizontal");
+        //Crear joystick en UI.
+        return vJoystick.GetHorizontalAxis();
     }
 
 
     public float GetVerticalCameraAxis()
     {
-        //Crear d pad en UI.
-        return Input.GetAxis("Vertical");
+        //Crear koystick en UI.
+        return vJoystick.GetVerticalAxis();
     }
 
 
