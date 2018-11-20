@@ -7,6 +7,8 @@ public class InputManager : MonoBehaviour {
 
     IInput input;
 
+    [SerializeField] VirtualJoystick vJoystick;
+
     public static InputManager Instance
     {
         get
@@ -26,7 +28,7 @@ public class InputManager : MonoBehaviour {
         instance = this;
 
 #if UNITY_ANDROID || UNITY_IOS
-        input = new InputMobile();
+        input = new InputMobile(vJoystick);
 #else
         input = new InputPC();
 #endif

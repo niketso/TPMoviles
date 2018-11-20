@@ -2,25 +2,29 @@
 
 public class InputMobile : IInput
 {
-        [SerializeField] VirtualJoystick vJoystick;
+    VirtualJoystick _virtualJoystick;
+    public InputMobile(VirtualJoystick vj)
+    {
+        _virtualJoystick = vj;
+    }
        
     public float GetHorizontalCameraAxis()
     {
-        //Crear joystick en UI.
-        return vJoystick.GetHorizontalAxis();
+        
+        return _virtualJoystick.GetHorizontalAxis();
     }
 
 
     public float GetVerticalCameraAxis()
     {
-        //Crear koystick en UI.
-        return vJoystick.GetVerticalAxis();
+        
+        return _virtualJoystick.GetVerticalAxis();
     }
 
 
     public bool GetFireButton()
     {
-        if (Input.GetButtonDown("FireButton"))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             return true;
         }
