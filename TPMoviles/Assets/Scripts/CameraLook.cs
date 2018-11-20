@@ -14,7 +14,7 @@ public class CameraLook : MonoBehaviour
     {
         //Calculo la rotación en cada eje según el input
         float horRot = InputManager.Instance.GetHorizontalCameraAxis() * speed * Time.deltaTime;
-       // Debug.Log(InputManager.Instance.GetHorizontalCameraAxis());
+        // Debug.Log(InputManager.Instance.GetHorizontalCameraAxis());
         float verRot = -InputManager.Instance.GetVerticalCameraAxis() * speed * Time.deltaTime;
         //Debug.Log(InputManager.Instance.GetVerticalCameraAxis());
 
@@ -28,6 +28,6 @@ public class CameraLook : MonoBehaviour
         cameraAxis.localEulerAngles = new Vector3(verticalAngle, 0, 0);
 
         //Me roto a mi horizontalmente según el mouse
-        transform.Rotate(0, horRot, 0);
+        transform.localRotation *= Quaternion.AngleAxis(horRot, Vector3.up);
     }
 }

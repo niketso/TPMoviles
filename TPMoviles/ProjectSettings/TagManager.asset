@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Undefined
   - Hand
+  - Camera
   layers:
   - Default
   - TransparentFX

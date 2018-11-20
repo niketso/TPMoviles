@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour {
     private int CurrentWaypoint = 0;
     NavMeshAgent agent;
     CameraLook cam;
+    public bool arrived = false;
+    public bool fighting = false;
 
     private void Awake()
     {
@@ -27,11 +29,8 @@ public class PlayerMovement : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         agent.SetDestination(waypointsArray[CurrentWaypoint].transform.position);
-        //cam.enabled = false;
-        
-            
-        
     }
+
     public void SetNextWaypoint()
     {       
         CurrentWaypoint++;        
