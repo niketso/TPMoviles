@@ -3,6 +3,7 @@
 public class InputMobile : IInput
 {
         [SerializeField] VirtualJoystick vJoystick;
+       
     public float GetHorizontalCameraAxis()
     {
         //Crear joystick en UI.
@@ -19,7 +20,7 @@ public class InputMobile : IInput
 
     public bool GetFireButton()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("FireButton"))
         {
             return true;
         }
@@ -32,7 +33,7 @@ public class InputMobile : IInput
     public bool GetPowerUpButton()
     {
         //crear boton en UI.
-        if (Input.GetKeyDown(KeyCode.O) )
+        if (Input.GetKeyDown(KeyCode.O))
         {
             return true;
         }
