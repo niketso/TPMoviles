@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour {
     CameraLook cam;
     public bool arrived = false;
     public bool fighting = false;
+    public bool walking=false;
 
     private void Awake()
     {
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Walk()
     {
+        walking = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         agent.SetDestination(waypointsArray[CurrentWaypoint].transform.position);
