@@ -88,16 +88,24 @@ public class PlayerShoot : MonoBehaviour
             if (hit.collider.gameObject.tag == "Enemy" && !(hit.collider.gameObject.GetComponent<EnemyMovement>().IsDead))
             {
                 Debug.Log("Enemy HIT");
-                hit.transform.gameObject.GetComponent<Animator>().SetTrigger("Dead");
-                hit.transform.gameObject.GetComponent<Animator>().SetFloat("Speed", 0);
-                hit.transform.gameObject.GetComponent<EnemyMovement>().IsDead = true;
-                hit.transform.gameObject.GetComponent<Enemy>().IsDead();
-                hit.transform.gameObject.GetComponent<Collider>().enabled = false;
-                hit.transform.gameObject.GetComponent<NavMeshAgent>().enabled = false;
-                Destroy(hit.collider.gameObject, 6);
-                GameObject.FindGameObjectWithTag("Hand").GetComponent<Collider>().enabled = false;
-                score++;
-                points.text = score.ToString();
+                if (hit.transform.gameObject.GetComponent<Enemy>().life == 1)
+                {
+                    //-----------------CUANDO SE MUERE UN ENEMIGO---------------------//
+                    hit.transform.gameObject.GetComponent<Animator>().SetTrigger("Dead");
+                    hit.transform.gameObject.GetComponent<Animator>().SetFloat("Speed", 0);
+                    hit.transform.gameObject.GetComponent<EnemyMovement>().IsDead = true;
+                    hit.transform.gameObject.GetComponent<Enemy>().IsDead();
+                    hit.transform.gameObject.GetComponent<Collider>().enabled = false;
+                    hit.transform.gameObject.GetComponent<NavMeshAgent>().enabled = false;
+                    Destroy(hit.collider.gameObject, 6);
+                    GameObject.FindGameObjectWithTag("Hand").GetComponent<Collider>().enabled = false;
+                    score++;
+                    points.text = score.ToString();
+                }
+                else hit.transform.gameObject.GetComponent<Enemy>().life--;
+
+
+
                 //if (score == 25)
                 //{
                 //    SceneManager.LoadScene("StartScreen");

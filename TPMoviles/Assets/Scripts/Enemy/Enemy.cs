@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
+
     [SerializeField] private GroupOfEnemies groupOfEnemies;
+    public int life;
+
 
     private void Awake()
     {
