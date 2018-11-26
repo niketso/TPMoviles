@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour {
     IInput input;
 
     [SerializeField] VirtualJoystick vJoystick;
+    [SerializeField] VirtualJoystickButtons vJoystickButtons;
 
     public static InputManager Instance
     {
@@ -28,7 +29,7 @@ public class InputManager : MonoBehaviour {
         instance = this;
 
 #if UNITY_ANDROID || UNITY_IOS
-        input = new InputMobile(vJoystick);
+        input = new InputMobile(vJoystick,vJoystickButtons);
 #else
         input = new InputPC();
 #endif
@@ -59,14 +60,7 @@ public class InputManager : MonoBehaviour {
 
     public bool GetReloadButton()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return input.GetReloadButton();
     }
     
     

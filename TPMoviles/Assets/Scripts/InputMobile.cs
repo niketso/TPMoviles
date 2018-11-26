@@ -3,9 +3,11 @@
 public class InputMobile : IInput
 {
     VirtualJoystick _virtualJoystick;
-    public InputMobile(VirtualJoystick vj)
+    VirtualJoystickButtons _virtualJoystickButtons;
+    public InputMobile(VirtualJoystick vj,VirtualJoystickButtons vjb)
     {
         _virtualJoystick = vj;
+        _virtualJoystickButtons = vjb;
     }
        
     public float GetHorizontalCameraAxis()
@@ -24,40 +26,17 @@ public class InputMobile : IInput
 
     public bool GetFireButton()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return _virtualJoystickButtons.FireButton();
     }
 
     public bool GetPowerUpButton()
-    {
-        //crear boton en UI.
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+    {       
+        return _virtualJoystickButtons.PowerUpButton();     
     }
 
     public bool GetReloadButton()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-
+        return _virtualJoystickButtons.ReloadButton();
     }
 
 }
