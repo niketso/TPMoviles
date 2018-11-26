@@ -98,13 +98,13 @@ public class PlayerShoot : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Hand").GetComponent<Collider>().enabled = false;
                 score++;
                 points.text = score.ToString();
-                if (score == 25)
-                {
-                    SceneManager.LoadScene("StartScreen");
-                    Cursor.lockState = CursorLockMode.None;
-                    Cursor.visible = true;
+                //if (score == 25)
+                //{
+                //    SceneManager.LoadScene("StartScreen");
+                //    Cursor.lockState = CursorLockMode.None;
+                //    Cursor.visible = true;
 
-                }
+                //}
 
             }
 

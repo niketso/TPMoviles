@@ -22,9 +22,13 @@ public class UpdateScore : MonoBehaviour {
 	}
 
 	void Update(){
-		
-		if (score == maxScore)
-			SceneManager.LoadScene (nextLevel);
-		
-	}
+
+        if (score == maxScore)
+        {
+            SceneManager.LoadScene(nextLevel);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
+    }
 }

@@ -27,6 +27,10 @@ public class PlayerMovement : MonoBehaviour {
 
     public void Walk()
     {
+        if (waypointsArray[CurrentWaypoint].transform.name!=("Wayp1"))
+        {
+            waypointsArray[CurrentWaypoint - 1].transform.gameObject.SetActive(false);
+        }
         walking = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

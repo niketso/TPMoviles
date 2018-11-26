@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: b69ccfa0a56f6854380c99f2a1442713
   - enabled: 1
-    path: Assets/Scenes/Prototipo.unity
-    guid: ecc2aed63fb7275409ab2f9e460d5da7
-  - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 2fa9d84ddbeff044fb355b7dee147a7b
+  - enabled: 1
+    path: Assets/Scenes/Hospital_scene.unity
+    guid: 07e9af7e54770254a9c3a92ebf8e970d
   m_configObjects: {}

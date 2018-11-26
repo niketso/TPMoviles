@@ -15,11 +15,13 @@ public class GroupOfEnemies : MonoBehaviour {
     {
             
     }
+
     public void Assign(GameObject gameobj)
     {
         gameobj.SetActive(false);
         enemies.Add(gameobj);
     }
+
     public void ClearList(GameObject gameobj)
     {
         enemies.Remove(gameobj);

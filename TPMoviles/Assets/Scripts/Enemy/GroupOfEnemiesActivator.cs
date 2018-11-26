@@ -29,7 +29,7 @@ public class GroupOfEnemiesActivator : MonoBehaviour
             enableUpdate = true;
             Debug.Log("COLLISION ----- " + gameObject.name);
             GroupOfEnemiesManager.Instance.ActivateGroup();
-            lookAt = gameObject.transform.FindChild("LookAt");           
+            lookAt = gameObject.transform.Find("LookAt");           
             pm.arrived = true;
             pm.walking = false;
             cameraRotated = false;   
@@ -53,7 +53,7 @@ public class GroupOfEnemiesActivator : MonoBehaviour
 
         // origin = -transform.right;
         player = GameObject.FindGameObjectWithTag("Player");
-        camera = player.transform.FindChild("CameraContainer");
+        camera = player.transform.Find("CameraContainer");
         cRotation = new Quaternion(camera.localRotation.x, camera.localRotation.y, camera.localRotation.z, camera.localRotation.w);
         pm = player.GetComponent<PlayerMovement>();
         agent = player.GetComponent<NavMeshAgent>();
@@ -68,14 +68,14 @@ public class GroupOfEnemiesActivator : MonoBehaviour
         if (!rotated && pm.arrived && lookAt != null)
             RotatePlayer();
 
-        Debug.Log("Speed:" + agent.speed + " ---- " + "   CAMERAlocalRot  " + camera.localRotation.y + " -- ROTATECAMERA --" + rotateCamera + "-- CAMERArotated --  " + cameraRotated + "-- WALKING: " + pm.walking);
+        //Debug.Log("Speed:" + agent.speed + " ---- " + "   CAMERAlocalRot  " + camera.localRotation.y + " -- ROTATECAMERA --" + rotateCamera + "-- CAMERArotated --  " + cameraRotated + "-- WALKING: " + pm.walking);
         if (pm.walking && !rotateCamera && !cameraRotated)
         {
             rotateCamera = true;
         }
         var abs = Mathf.Abs(player.transform.rotation.y - rotation.y);
         LogPlayerRotation();
-        Debug.Log("ABS:" + abs + " done:" + (abs < 0.00001F));
+        //Debug.Log("ABS:" + abs + " done:" + (abs < 0.00001F));
         if (abs < 0.001F)
         {
             rotated = true;
@@ -93,10 +93,10 @@ public class GroupOfEnemiesActivator : MonoBehaviour
 
     private void LogPlayerRotation()
     {
-        if (lookAt == null)
-            Debug.Log("Rotation:" + player.transform.rotation.y + " => " + rotation.y);
-        else
-            Debug.Log("Rotation:" + player.transform.rotation.y + " => " + rotation.y + "----" + lookAt.position);
+        //if (lookAt == null)
+            //Debug.Log("Rotation:" + player.transform.rotation.y + " => " + rotation.y);
+        //else
+            //Debug.Log("Rotation:" + player.transform.rotation.y + " => " + rotation.y + "----" + lookAt.position);
     }
 
     private void AdjustCamera()
@@ -112,7 +112,7 @@ public class GroupOfEnemiesActivator : MonoBehaviour
 
     private void RotatePlayer()
     {
-        Debug.Log("Rotate Player Method");
+        //Debug.Log("Rotate Player Method");
         Vector3 direction = lookAt.position - player.transform.position;
         Debug.DrawRay(player.transform.position, direction, Color.red, 10f);
         rotation = Quaternion.LookRotation(direction, Vector3.up);
