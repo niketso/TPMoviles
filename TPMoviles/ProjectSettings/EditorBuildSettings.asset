@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Hospital_scene.unity
     guid: 07e9af7e54770254a9c3a92ebf8e970d
+  - enabled: 1
+    path: Assets/Scenes/WinSceen.unity
+    guid: 419424bfc93d5f445b46cfbd3ab5574f
   m_configObjects: {}

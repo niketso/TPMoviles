@@ -12592,7 +12592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevel: WinScreen
-  maxScore: 45
+  maxScore: 44
   score: 0
 --- !u!222 &709210989
 CanvasRenderer:
