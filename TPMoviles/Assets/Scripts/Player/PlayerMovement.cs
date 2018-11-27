@@ -32,10 +32,12 @@ public class PlayerMovement : MonoBehaviour {
             if(waypointsArray[CurrentWaypoint-1])
                 waypointsArray[CurrentWaypoint - 1].transform.gameObject.SetActive(false);
         }
+        
         walking = true;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         agent.SetDestination(waypointsArray[CurrentWaypoint].transform.position);
+        
     }
 
     public void SetNextWaypoint()

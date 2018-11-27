@@ -36,7 +36,7 @@ public class GroupOfEnemiesManager : MonoBehaviour
             groupOfEnemies.Enqueue(go.GetComponent<GroupOfEnemies>());
         }
 
-        Debug.Log("Asignado");
+        //Debug.Log("Asignado");
     }
     
     public void ActivateGroup()
@@ -47,8 +47,8 @@ public class GroupOfEnemiesManager : MonoBehaviour
             return;
         }
         GroupOfEnemies goe = groupOfEnemies.Dequeue();
-        Debug.Log(goe);
+        //Debug.Log(goe);
         goe.enabled = true;
-        Debug.Log("Activado");
+        //Debug.Log("Activado");
     }
 }

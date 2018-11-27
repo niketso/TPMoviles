@@ -27,7 +27,7 @@ public class GroupOfEnemiesActivator : MonoBehaviour
         {
             agent.enabled = false;
             enableUpdate = true;
-            Debug.Log("COLLISION ----- " + gameObject.name);
+            //Debug.Log("COLLISION ----- " + gameObject.name);
             GroupOfEnemiesManager.Instance.ActivateGroup();
             lookAt = gameObject.transform.Find("LookAt");           
             pm.arrived = true;
@@ -63,8 +63,8 @@ public class GroupOfEnemiesActivator : MonoBehaviour
     {
         if (!enableUpdate)
             return;
-        Debug.Log("ARRIVED" + pm.arrived);
-        Debug.Log("FIGHTING" + pm.fighting);
+        //Debug.Log("ARRIVED" + pm.arrived);
+        //Debug.Log("FIGHTING" + pm.fighting);
         if (!rotated && pm.arrived && lookAt != null)
             RotatePlayer();
 

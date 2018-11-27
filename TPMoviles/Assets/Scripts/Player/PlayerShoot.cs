@@ -103,17 +103,6 @@ public class PlayerShoot : MonoBehaviour
                     points.text = score.ToString();
                 }
                 else hit.transform.gameObject.GetComponent<Enemy>().life--;
-
-
-
-                //if (score == 25)
-                //{
-                //    SceneManager.LoadScene("StartScreen");
-                //    Cursor.lockState = CursorLockMode.None;
-                //    Cursor.visible = true;
-
-                //}
-
             }
 
             if (!infiniteAmmoActivated)
