@@ -4,33 +4,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class VirtualJoystickButtons : MonoBehaviour, IPointerUpHandler, IPointerDownHandler{
+public class VirtualJoystickButtons : MonoBehaviour, IPointerUpHandler{
 
-   [SerializeField] Button fireButton;
-   [SerializeField] Button reloadButton;
-   [SerializeField] Button powerUpButton;
-
+    [SerializeField] FireButton _fireButton;
+    [SerializeField]  ReloadButton _reloadButton;
+     [SerializeField]  PowerUpButton _powerUpButton;
 
     public void OnPointerUp(PointerEventData eventData)
-    {
-        
+    {   
+       _fireButton.DeactivateFireButton();
+       _reloadButton.DeactivateReloadButton();
+       _powerUpButton.DeactivatePowerUpButton();
+
     }
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        
-    }
+   
     public bool FireButton()
     {
-        return true;
-        
+        return _fireButton.ButtonState();      
     }
     public bool ReloadButton()
     {
-        return true;
+        return _reloadButton;
     }
 
     public bool PowerUpButton()
     {
-        return true;
+        return _powerUpButton;
     }
 }

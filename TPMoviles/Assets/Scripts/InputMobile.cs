@@ -4,7 +4,9 @@ public class InputMobile : IInput
 {
     VirtualJoystick _virtualJoystick;
     VirtualJoystickButtons _virtualJoystickButtons;
-    public InputMobile(VirtualJoystick vj,VirtualJoystickButtons vjb)
+
+    
+    public InputMobile(VirtualJoystick vj, VirtualJoystickButtons vjb)
     {
         _virtualJoystick = vj;
         _virtualJoystickButtons = vjb;
@@ -30,13 +32,14 @@ public class InputMobile : IInput
     }
 
     public bool GetPowerUpButton()
-    {       
-        return _virtualJoystickButtons.PowerUpButton();     
+    {
+       return _virtualJoystickButtons.PowerUpButton();
     }
 
     public bool GetReloadButton()
     {
         return _virtualJoystickButtons.ReloadButton();
+
     }
 
 }

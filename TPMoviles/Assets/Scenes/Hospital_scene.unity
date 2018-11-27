@@ -5782,6 +5782,7 @@ GameObject:
   - component: {fileID: 295753699}
   - component: {fileID: 295753698}
   - component: {fileID: 295753697}
+  - component: {fileID: 295753700}
   m_Layer: 5
   m_Name: ReloadButton
   m_TagString: Untagged
@@ -5801,7 +5802,7 @@ RectTransform:
   m_Children:
   - {fileID: 622094154}
   m_Father: {fileID: 1854571750}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.4}
   m_AnchorMax: {x: 1, y: 0.4}
@@ -5846,7 +5847,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 295753698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 295753700}
+        m_MethodName: ActivateReloadButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &295753698
@@ -5883,11 +5895,73 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 295753695}
   m_CullTransparentMesh: 0
+--- !u!114 &295753700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 295753695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719fe4475a669af4993e16151ea325e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireButton: {fileID: 1009761079}
+  _reloadButton: {fileID: 295753700}
+  _powerUpButton: {fileID: 791071160}
 --- !u!4 &297349447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4526503991467414, guid: 43d2ac7179f2a2f4c837648c0fd8b1a8,
     type: 2}
   m_PrefabInternal: {fileID: 1597352676}
+--- !u!1 &299144729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 299144730}
+  - component: {fileID: 299144731}
+  m_Layer: 5
+  m_Name: VirtualJoystickButtons
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &299144730
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 299144729}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1854571750}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &299144731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 299144729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d883bd226d909445b0532dd5fa3638d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireButton: {fileID: 0}
+  _reloadButton: {fileID: 0}
+  _powerUpButton: {fileID: 0}
 --- !u!1001 &299587424
 Prefab:
   m_ObjectHideFlags: 0
@@ -6258,7 +6332,7 @@ RectTransform:
   m_Children:
   - {fileID: 84889095}
   m_Father: {fileID: 1854571750}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -14724,6 +14798,7 @@ GameObject:
   - component: {fileID: 791071159}
   - component: {fileID: 791071158}
   - component: {fileID: 791071157}
+  - component: {fileID: 791071160}
   m_Layer: 5
   m_Name: PowerUpButton
   m_TagString: Untagged
@@ -14743,7 +14818,7 @@ RectTransform:
   m_Children:
   - {fileID: 1610148275}
   m_Father: {fileID: 1854571750}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.4}
   m_AnchorMax: {x: 0, y: 0.4}
@@ -14788,7 +14863,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 791071158}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 791071160}
+        m_MethodName: ActivatePowerUpButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &791071158
@@ -14825,6 +14911,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 791071155}
   m_CullTransparentMesh: 0
+--- !u!114 &791071160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 791071155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1742659e3fd1a0d4aa580c690504df18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireButton: {fileID: 1009761079}
+  _reloadButton: {fileID: 295753700}
+  _powerUpButton: {fileID: 791071160}
 --- !u!1001 &793638953
 Prefab:
   m_ObjectHideFlags: 0
@@ -19272,6 +19372,7 @@ GameObject:
   - component: {fileID: 1009761078}
   - component: {fileID: 1009761077}
   - component: {fileID: 1009761076}
+  - component: {fileID: 1009761079}
   m_Layer: 5
   m_Name: FireButton
   m_TagString: Untagged
@@ -19291,7 +19392,7 @@ RectTransform:
   m_Children:
   - {fileID: 905950839}
   m_Father: {fileID: 1854571750}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.15}
   m_AnchorMax: {x: 1, y: 0.15}
@@ -19336,7 +19437,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1009761077}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1009761079}
+        m_MethodName: ActivateFireButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1009761077
@@ -19373,6 +19485,20 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1009761074}
   m_CullTransparentMesh: 0
+--- !u!114 &1009761079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1009761074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd6b3372843506a4baba817d6864358a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireButton: {fileID: 1009761079}
+  _reloadButton: {fileID: 295753700}
+  _powerUpButton: {fileID: 791071160}
 --- !u!1001 &1011148002
 Prefab:
   m_ObjectHideFlags: 0
@@ -39865,7 +39991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1854571750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -39876,6 +40002,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 299144730}
   - {fileID: 308966725}
   - {fileID: 1009761075}
   - {fileID: 295753696}
@@ -43977,6 +44104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vJoystick: {fileID: 308966728}
+  vJoystickButtons: {fileID: 299144731}
 --- !u!4 &2140040225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013047979304, guid: cc54f1be370bec748ac321d84d85ffe3,
