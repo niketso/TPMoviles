@@ -8,7 +8,7 @@ public class Menu : MonoBehaviour
 {    
     public void ChangeLevel()
     {
-        SceneManager.LoadScene("Prototipo");
+        SceneManager.LoadScene("Hospital_scene");
         
     }
 
