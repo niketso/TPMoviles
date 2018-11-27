@@ -29,7 +29,8 @@ public class GroupOfEnemies : MonoBehaviour {
         if (enemies.Count == 0)
         {
             player.SetNextWaypoint();
-            player.Walk();
+            if(player.lastWaypoint==false)
+                player.Walk();
         }
     }
 

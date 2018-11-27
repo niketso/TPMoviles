@@ -25,6 +25,9 @@ public class GroupOfEnemiesActivator : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            if (this.name == ("Wayp4"))
+                other.gameObject.GetComponent<PlayerMovement>().lastWaypoint = true;
+           
             agent.enabled = false;
             enableUpdate = true;
             //Debug.Log("COLLISION ----- " + gameObject.name);

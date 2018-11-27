@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     public bool arrived = false;
     public bool fighting = false;
     public bool walking=false;
+    public bool lastWaypoint = false;
 
     private void Awake()
     {
@@ -32,12 +33,14 @@ public class PlayerMovement : MonoBehaviour {
             if(waypointsArray[CurrentWaypoint-1])
                 waypointsArray[CurrentWaypoint - 1].transform.gameObject.SetActive(false);
         }
-        
-        walking = true;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        agent.SetDestination(waypointsArray[CurrentWaypoint].transform.position);
-        
+
+        if (lastWaypoint == false)
+        {
+            walking = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            agent.SetDestination(waypointsArray[CurrentWaypoint].transform.position);
+        }
     }
 
     public void SetNextWaypoint()

@@ -91,6 +91,7 @@ public class PlayerShoot : MonoBehaviour
                 if (hit.transform.gameObject.GetComponent<Enemy>().life == 1)
                 {
                     //-----------------CUANDO SE MUERE UN ENEMIGO---------------------//
+                    hit.transform.gameObject.GetComponent<Enemy>().life = 0;
                     hit.transform.gameObject.GetComponent<Animator>().SetTrigger("Dead");
                     hit.transform.gameObject.GetComponent<Animator>().SetFloat("Speed", 0);
                     hit.transform.gameObject.GetComponent<EnemyMovement>().IsDead = true;

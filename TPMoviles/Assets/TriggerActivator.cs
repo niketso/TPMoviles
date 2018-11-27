@@ -16,7 +16,7 @@ public class TriggerActivator : MonoBehaviour {
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
-        {
+        {            
             if (enemyToActivate.activeSelf == true)
             {                
                 Time.timeScale = 1;
