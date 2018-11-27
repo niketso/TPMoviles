@@ -12591,7 +12591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d0716046d5f484a84f47a57f9023c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: StartScreen
+  nextLevel: WinScreen
   maxScore: 45
   score: 0
 --- !u!222 &709210989
