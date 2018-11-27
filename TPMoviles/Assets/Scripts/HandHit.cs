@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HandHit : MonoBehaviour {
 
     GameObject player;
+    
 
     private void Awake()
     {
@@ -16,6 +17,7 @@ public class HandHit : MonoBehaviour {
     {
         if (other.transform.tag == "Player")
             player.GetComponent<PlayerLife>().lives--;
+        
          
     }
 

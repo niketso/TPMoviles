@@ -117,13 +117,11 @@ public class PlayerShoot : MonoBehaviour
 
             
         }
-    }
-
-    
+    }        
 
     public void Reload()
     {
-        if (totalBullets <= 0)
+        if (totalBullets <= 0 && currentBullets == 0)
         {
             return;
         }
