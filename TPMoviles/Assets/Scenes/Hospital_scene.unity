@@ -6374,7 +6374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50, y: 39}
   m_SizeDelta: {x: 250, y: 250}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &308966726
@@ -39737,6 +39737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vJoystick: {fileID: 308966728}
   vJoystickButtons: {fileID: 299144731}
+  movileInputCanvas: {fileID: 1854571749}
 --- !u!4 &2140040225 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013047979304, guid: cc54f1be370bec748ac321d84d85ffe3,

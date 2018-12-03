@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour {
 
     [SerializeField] VirtualJoystick vJoystick;
     [SerializeField] VirtualJoystickButtons vJoystickButtons;
+    [SerializeField] GameObject movileInputCanvas;
 
     public static InputManager Instance
     {
@@ -29,8 +30,12 @@ public class InputManager : MonoBehaviour {
         instance = this;
 
 #if UNITY_ANDROID || UNITY_IOS
+        if(!movileInputCanvas)
+            movileInputCanvas.SetActive(true);
         input = new InputMobile(vJoystick,vJoystickButtons);
 #else
+        if (movileInputCanvas)
+            movileInputCanvas.SetActive(false);
         input = new InputPC();
 #endif
     }
