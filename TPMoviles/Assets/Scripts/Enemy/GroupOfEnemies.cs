@@ -9,12 +9,7 @@ public class GroupOfEnemies : MonoBehaviour {
     private void Awake()
     {
         enemies = new List<GameObject>();
-    }
-    
-    private void Update()
-    {
-            
-    }
+    }   
 
     public void Assign(GameObject gameobj)
     {

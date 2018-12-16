@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AnimationUI.cs" />
     <Compile Include="Assets\Scripts\Buttons\FireButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\PowerUpButton.cs" />
     <Compile Include="Assets\Scripts\Buttons\ReloadButton.cs" />
