@@ -10,7 +10,6 @@ public class AudioPlayer : MonoBehaviour
     private void Awake()
     {
         audioSource = GetComponent<AudioSource>();        
-        audioSource.loop = true;
         audioSource.Play();        
     }
 
