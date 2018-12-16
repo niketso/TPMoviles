@@ -25,12 +25,17 @@ public class PlayerShoot : MonoBehaviour
     public Text points;
     public Text ammoText;
 
+    AudioSource audioSource;
+
     [SerializeField] GameObject canvasUI;
+    [SerializeField] AudioClip enemyDie;
+    [SerializeField] AudioClip dryGun;
+    [SerializeField] AudioClip shot;
 
     private void Awake()
     {
         cam = GetComponent<Camera>();
-        //gunAudio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
             
     void Start()
@@ -47,7 +52,9 @@ public class PlayerShoot : MonoBehaviour
             
             if (currentBullets > 0)
                 Fire();
-            
+            else
+                audioSource.PlayOneShot(dryGun, 0.5f);
+
         }
 
         if (InputManager.Instance.GetReloadButton())
@@ -72,7 +79,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Fire()
     {
-
+        audioSource.PlayOneShot(shot, 0.5f);
         if (fireTimer < fireRate || currentBullets <= 0 /*|| isReloading*/)
         {
             //Debug.Log("Fire1");
@@ -99,6 +106,7 @@ public class PlayerShoot : MonoBehaviour
                     hit.transform.gameObject.GetComponent<Collider>().enabled = false;
                     hit.transform.gameObject.GetComponent<NavMeshAgent>().enabled = false;
                     Destroy(hit.collider.gameObject, 6);
+                    audioSource.PlayOneShot(enemyDie, 1F);
                     GameObject.FindGameObjectWithTag("Hand").GetComponent<Collider>().enabled = false;
                     score++;
                     points.text = score.ToString();

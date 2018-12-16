@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour {
     [SerializeField] private GroupOfEnemies groupOfEnemies;
     public int life;
 
-
     private void Awake()
     {
         groupOfEnemies.Assign(gameObject);
