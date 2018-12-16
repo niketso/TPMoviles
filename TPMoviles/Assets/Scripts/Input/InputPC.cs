@@ -54,5 +54,17 @@ public class InputPC : IInput
 
     }
 
+    public bool GetPauseButton()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
 }
 

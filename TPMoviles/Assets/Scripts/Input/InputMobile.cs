@@ -42,4 +42,9 @@ public class InputMobile : IInput
 
     }
 
+    public bool GetPauseButton()
+    {
+        return _virtualJoystickButtons.PauseButton();
+    }
+
 }

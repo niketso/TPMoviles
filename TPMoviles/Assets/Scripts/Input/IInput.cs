@@ -11,6 +11,8 @@
     bool GetReloadButton();
     //Power Up Button
     bool GetPowerUpButton();
+
+    bool GetPauseButton();
         
     }
     

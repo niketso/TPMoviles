@@ -9,6 +9,7 @@ public class VirtualJoystickButtons : MonoBehaviour{
     [SerializeField] FireButton _fireButton;
     [SerializeField]  ReloadButton _reloadButton;
      [SerializeField]  PowerUpButton _powerUpButton;
+     [SerializeField] PauseButton _pauseButton;
 
    
     public bool FireButton()
@@ -23,5 +24,10 @@ public class VirtualJoystickButtons : MonoBehaviour{
     public bool PowerUpButton()
     {
         return _powerUpButton.ButtonState();
+    }
+
+    public bool PauseButton()
+    {
+        return _pauseButton.ButtonState();
     }
 }
