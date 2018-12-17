@@ -24115,6 +24115,23 @@ Prefab:
       propertyPath: groupOfEnemies
       value: 
       objectReference: {fileID: 202626322}
+    - target: {fileID: 4254390294525930, guid: bd36800d745dbd2449b336b95d204dc3, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254390294525930, guid: bd36800d745dbd2449b336b95d204dc3, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254390294525930, guid: bd36800d745dbd2449b336b95d204dc3, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65545263259577530, guid: bd36800d745dbd2449b336b95d204dc3,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd36800d745dbd2449b336b95d204dc3, type: 2}
   m_IsPrefabAsset: 0

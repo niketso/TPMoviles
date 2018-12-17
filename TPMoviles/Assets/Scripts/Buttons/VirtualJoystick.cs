@@ -74,12 +74,12 @@ public class VirtualJoystick : MonoBehaviour, IPointerUpHandler, IPointerDownHan
 
     public float GetHorizontalAxis()
 	{
-			return inputVector.x;
+			return inputVector.x*3;
 	}
 
 	public float GetVerticalAxis()
 	{
-		return inputVector.y;
+		return inputVector.y*3;
 	}
 
 }

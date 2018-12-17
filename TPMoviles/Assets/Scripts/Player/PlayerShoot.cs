@@ -97,7 +97,7 @@ public class PlayerShoot : MonoBehaviour
             {
                 Debug.Log("Enemy HIT");
                 GameObject impactGO = Instantiate(impact, hit.point,Quaternion.LookRotation(hit.normal));
-                Destroy(impactGO, 2f);
+                Destroy(impactGO, 0.5f);
 
                 if (hit.transform.gameObject.GetComponent<Enemy>().life == 1)
                 {
