@@ -26579,7 +26579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1f44cd15360cda4fb205b88318a1a2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 5
+  lives: 10
 --- !u!1001 &1294359661
 Prefab:
   m_ObjectHideFlags: 0
@@ -39445,6 +39445,7 @@ MonoBehaviour:
   enemyDie: {fileID: 8300000, guid: 419f1250248a96242b41c01aa575ef67, type: 3}
   dryGun: {fileID: 8300000, guid: ea9b661cb35895649b2d42202253f4a3, type: 3}
   shot: {fileID: 8300000, guid: e7d1014550fb60442a532752aa41f8a2, type: 3}
+  impact: {fileID: 1589711824355800, guid: 24b82347924701148a13c746edfb6b22, type: 2}
 --- !u!4 &2062229398 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013047979304, guid: cc54f1be370bec748ac321d84d85ffe3,

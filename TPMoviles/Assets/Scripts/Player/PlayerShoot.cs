@@ -31,6 +31,7 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField] AudioClip enemyDie;
     [SerializeField] AudioClip dryGun;
     [SerializeField] AudioClip shot;
+    [SerializeField] GameObject impact;
 
     private void Awake()
     {
@@ -95,6 +96,9 @@ public class PlayerShoot : MonoBehaviour
             if (hit.collider.gameObject.tag == "Enemy" && !(hit.collider.gameObject.GetComponent<EnemyMovement>().IsDead))
             {
                 Debug.Log("Enemy HIT");
+                GameObject impactGO = Instantiate(impact, hit.point,Quaternion.LookRotation(hit.normal));
+                Destroy(impactGO, 2f);
+
                 if (hit.transform.gameObject.GetComponent<Enemy>().life == 1)
                 {
                     //-----------------CUANDO SE MUERE UN ENEMIGO---------------------//
